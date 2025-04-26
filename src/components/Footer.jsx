@@ -69,6 +69,7 @@ const Footer = () => (
         gap: '1rem',
         justifyContent: 'center',
         marginBottom: '2rem',
+        flexWrap: 'wrap',  // Make the links wrap on mobile
       }}>
         <a href="#home" className="footer-link">Home</a>
         <a href="#about" className="footer-link">About</a>
@@ -109,6 +110,46 @@ const Footer = () => (
         @keyframes sparkleParticle {
           0%, 95%, 100% { box-shadow: 0 0 8px aqua; }
           97% { box-shadow: 0 0 20px white; }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+          h2 {
+            font-size: 1.5rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+            max-width: 90%;
+          }
+
+          .footer-link {
+            font-size: 0.9rem;
+          }
+
+          .footer-link:hover {
+            font-size: 1rem;
+          }
+
+          .footer-link {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+          }
+
+          .footer-link:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        /* Extra Mobile Adjustments */
+        @media (max-width: 480px) {
+          h2 {
+            font-size: 1.3rem;
+          }
+
+          p {
+            font-size: 0.85rem;
+          }
         }
       `}
     </style>

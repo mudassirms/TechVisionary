@@ -216,7 +216,7 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 35px #00f0ff, 0 0 50px #8a2be2;
 }
-
+ 
 /* ==== ABOUT SECTION ==== */
 .about-section {
   padding: 100px 60px;
@@ -631,4 +631,117 @@ body {
     background-color: #008c8c;
   }
 
+/* Hide Navbar on Scroll Down */
+.navbar.hide {
+  transform: translateY(-100%);
+}
 
+/* Ensure smooth transition when the navbar is shown/hidden */
+.navbar {
+  transition: transform 0.3s ease;
+}
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  width: 25px; /* Smaller width */
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 4px;
+  background-color: #00f0ff;
+  border-radius: 2px;
+}
+
+/* Navbar Links (Mobile Menu) */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 1.5rem; /* Reduce gap between items */
+}
+
+.nav-links.active {
+  display: block;
+  position: absolute;
+  top: 70px; /* Adjust this based on the height of the navbar */
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #0a0a23, #1a1a40);
+  box-shadow: 0 0 20px #00f0ff;
+  padding: 0.5rem 0; /* Reduce padding for compactness */
+  text-align: center;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 0; /* Reduce padding for a tighter layout */
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0.5rem;
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px #00f0ff;
+  border-radius: 8px;
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem; /* Reduce padding for the navbar */
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(135deg, #0a0a23, #1a1a40);
+    box-shadow: none; /* No shadow for mobile menu */
+  }
+
+  .nav-links.active {
+    display: block;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0; /* Reduce padding for list items */
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    padding: 0.5rem 0; /* Reduce padding for dropdown items */
+  }
+}
