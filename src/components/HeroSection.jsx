@@ -22,8 +22,8 @@ const HeroSection = () => {
         padding: '6rem 2rem',
         minHeight: '100vh',
         display: 'flex',
-        justifyContent: 'between',
-        alignItems: 'between',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         flexDirection: 'row',
         color: 'white',
       }}
@@ -197,6 +197,60 @@ const HeroSection = () => {
           .glow-button:hover {
             transform: scale(1.05);
             box-shadow: 0 0 25px #00f0ff, 0 0 50px #8a2be2;
+          }
+
+          /* Mobile Responsiveness */
+          @media (max-width: 768px) {
+            .hero-section {
+              flex-direction: column;
+              padding: 4rem 2rem;
+            }
+
+            .hero-text h1 {
+              font-size: 2rem;
+            }
+
+            .hero-text p {
+              font-size: 1rem;
+            }
+
+            .glow-button {
+              font-size: 1rem;
+              padding: 0.6rem 1.2rem;
+            }
+
+            .hud-wrapper img {
+              max-width: 400px;
+            }
+
+            .hud-zone {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .hero-text h1 {
+              font-size: 1.6rem;
+            }
+
+            .hero-text p {
+              font-size: 0.9rem;
+            }
+
+            .glow-button {
+              font-size: 0.9rem;
+              padding: 0.5rem 1rem;
+            }
+
+            .hud-wrapper img {
+              max-width: 320px;
+            }
+
+            .hud-zone {
+              width: 35px;
+              height: 35px;
+            }
           }
         `}
       </style>
